@@ -27,5 +27,5 @@ app.post('/upload', (req, res) => {
   })
 })
 
-
-app.listen(3001, () => { console.log('Server Listening') })
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => { console.log('Server Listening') })
