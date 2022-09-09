@@ -16,15 +16,16 @@ app.get('/', (req, res) => {
 })
 
 app.post('/upload', (req, res) => {
-  const newpath = __dirname + "/uploads/";
-  const file = req.files.file;
-  const filename = file.name;
-  file.mv(`${newpath}${filename}`, (err) => {
-    if (err) {
-      res.status(500).send({ message: "file upload failed", code: 200 })
-    }
-    res.status(200).send({ message: "file upload", code: 200 })
-  })
+  res.send({ ok: 200 })
+  // const newpath = __dirname + "/uploads/";
+  // const file = req.files.file;
+  // const filename = file.name;
+  // file.mv(`${newpath}${filename}`, (err) => {
+  //   if (err) {
+  //     res.status(500).send({ message: "file upload failed", code: 200 })
+  //   }
+  //   res.status(200).send({ message: "file upload", code: 200 })
+  // })
 })
 
 const PORT = process.env.PORT || 3001;
